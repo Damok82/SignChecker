@@ -32,7 +32,7 @@ public class SignChecker
 	{
 		if (2 > args.length)
 		{
-			Usage();
+			showUsage();
 			return;
 		}
 
@@ -60,9 +60,9 @@ public class SignChecker
 		}
 	}
 
-	private static void Usage()
+	private static void showUsage()
 	{
-		System.out.println("Test tool to demonstrate the vulnerability of CVE-2022-21449.\r\nUsage:\n   java SignChecker [message] [signature]");
+		System.out.println("Test tool to demonstrate the vulnerability of CVE-2022-21449.\r\nUsage:\r\n   java SignChecker [message] [signature]");
 	}
 
 	public SignChecker() throws NoSuchAlgorithmException, FileNotFoundException, IOException, Exception
