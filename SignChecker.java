@@ -89,8 +89,8 @@ public class SignChecker
 					int bytesRead = privateKeyFileStream.read(keyPairPrivateBytes);
 					if (privateKeyFileLength != bytesRead)
 					{
-						System.out.format("privateKeyFileLength: %d / bytesRead: %d\r\n", privateKeyFileLength, bytesRead);
-						throw new Exception("if (privateKeyFileLength != bytesRead)");
+						String errorMessage = String.format("Could not read private key from file (privateKeyFileLength: %d / bytesRead: %d)", privateKeyFileLength, bytesRead);
+						throw new Exception(errorMessage);
 					}
 
 					long publicKeyFileLength = publicKeyFile.length();
@@ -98,8 +98,8 @@ public class SignChecker
 					bytesRead = publicKeyFileStream.read(keyPairPublicBytes);
 					if (publicKeyFileLength != bytesRead)
 					{
-						System.out.format("publicKeyFileLength: %d / bytesRead: %d\r\n", publicKeyFileLength, bytesRead);
-						throw new Exception("if (publicKeyFileLength != bytesRead)");
+						String errorMessage = String.format("Could not read private key from file (publicKeyFileLength: %d / bytesRead: %d)", publicKeyFileLength, bytesRead);
+						throw new Exception(errorMessage);
 					}
 
 					KeyFactory keyFactory = KeyFactory.getInstance("EC");
